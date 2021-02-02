@@ -2,6 +2,14 @@
 
 ## 7.6
 
+### yum
+
+```bash
+yum list
+sudo yum install ...
+sudo yum update
+```
+
 ### Set hostname
 
 ```bash

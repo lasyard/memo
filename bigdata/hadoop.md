@@ -21,7 +21,8 @@ sudo mkdir -p /opt/bd/tmp/hadoop
 #### CentOS 7.3
 
 ```bash
-echo "PATH=\"/opt/bd/hadoop/bin:/opt/bd/hadoop/sbin:\${PATH}\"" | sudo tee /etc/profile.d/hadoop.sh
+echo "export HADOOP_HOME=\"/opt/bd/hadoop\"" | sudo tee /etc/profile.d/hadoop.sh
+echo "PATH=\"\${HADOOP_HOME}/bin:\${HADOOP_HOME}/sbin:\${PATH}\"" | sudo tee -a /etc/profile.d/hadoop.sh
 ```
 
 ### Config
@@ -102,7 +103,6 @@ sudo vi /opt/bd/hadoop/etc/hadoop/mapred-site.xml
 >         <name>mapreduce.framework.name</name>
 >         <value>yarn</value>
 >     </property>
->     <property>
 >     <property>
 >         <name>mapreduce.application.classpath</name>
 >         <value>/opt/bd/hadoop/share/hadoop/mapreduce/*:/opt/bd/hadoop/share/hadoop/mapreduce/lib/*</value>
