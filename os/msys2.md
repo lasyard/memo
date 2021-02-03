@@ -10,6 +10,7 @@ pacman -Q ...
 ```
 
 ```bash
+pacman -S --needed zip
 pacman -S --needed base-devel
 pacman -S --needed ${MINGW_PACKAGE_PREFIX}-toolchain
 ```

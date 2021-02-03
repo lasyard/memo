@@ -7,7 +7,14 @@
 ```bash
 yum list
 sudo yum install ...
+yum check-update
 sudo yum update
+sudo yum remove ...
+```
+
+```bash
+sudo yum install java-1.8.0-openjdk
+sudo yum install java-1.8.0-openjdk-devel
 ```
 
 ### Set hostname

@@ -55,6 +55,14 @@ sudo vi /opt/bd/hadoop/etc/hadoop/core-site.xml
 >         <name>hadoop.tmp.dir</name>
 >         <value>/opt/bd/tmp/hadoop</value>
 >     </property>
+>     <property>
+>         <name>hadoop.proxyuser.root.hosts</name>
+>         <value>*</value>
+>     </property>
+>     <property>
+>         <name>hadoop.proxyuser.root.groups</name>
+>         <value>*</value>
+>     </property>
 > </configuration>
 > ```
 
