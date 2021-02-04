@@ -15,6 +15,17 @@ cd ~/workspace/devel/wxWidgets-3.1.4
 
 #### macOS Catalina
 
+##### Debug
+
+```bash
+mkdir build-cocoa-debug
+cd build-cocoa-debug
+../configure --enable-debug
+make
+```
+
+##### Release
+
 ```bash
 mkdir build-cocoa-release
 cd build-cocoa-release
@@ -23,6 +34,17 @@ make
 ```
 
 #### MSYS2
+
+##### Debug
+
+```bash
+mkdir build-x86_64-msw-debug
+cd build-x86_64-msw-debug
+../configure --with-msw --enable-debug --disable-precomp-headers
+make
+```
+
+##### Static Release
 
 ```bash
 mkdir build-x86_64-msw-static-release

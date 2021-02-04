@@ -11,6 +11,8 @@ wget https://www.cryptopp.com/cryptopp840.zip.sig
 
 #### macOS Catalina
 
+##### Static Release
+
 ```bash
 unzip -d ~/workspace/devel/cryptopp840-cocoa cryptopp840.zip
 cd ~/workspace/devel/cryptopp840-cocoa
@@ -21,6 +23,8 @@ make
 ```
 
 #### MSYS2
+
+##### Static Release
 
 ```bash
 unzip -d ~/workspace/devel/cryptopp840-x86_64-msw-static cryptopp840.zip
