@@ -18,8 +18,8 @@ cd ~/workspace/devel/wxWidgets-3.1.4
 ##### Debug
 
 ```bash
-mkdir build-cocoa-debug
-cd build-cocoa-debug
+mkdir build-x86_64-darwin-debug
+cd build-x86_64-darwin-debug
 ../configure --enable-debug
 make
 ```
@@ -27,8 +27,8 @@ make
 ##### Release
 
 ```bash
-mkdir build-cocoa-release
-cd build-cocoa-release
+mkdir build-x86_64-darwin-release
+cd build-x86_64-darwin-release
 ../configure
 make
 ```
@@ -38,17 +38,17 @@ make
 ##### Debug
 
 ```bash
-mkdir build-x86_64-msw-debug
-cd build-x86_64-msw-debug
+mkdir build-x86_64-mingw-debug
+cd build-x86_64-mingw-debug
 ../configure --with-msw --enable-debug --disable-precomp-headers
 make
 ```
 
-##### Static Release
+##### Release
 
 ```bash
-mkdir build-x86_64-msw-static-release
-cd build-x86_64-msw-static-release
-../configure --with-msw --disable-shared --disable-precomp-headers
+mkdir build-x86_64-mingw-release
+cd build-x86_64-mingw-release
+../configure --with-msw --disable-precomp-headers
 make
 ```
