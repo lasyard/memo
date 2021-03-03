@@ -31,7 +31,9 @@ gradle dependencies
 ### Build
 
 ```bash
+gradle check
 gradle test
 gradle build
+gradle run
 gradle clean
 ```
