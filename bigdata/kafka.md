@@ -2,16 +2,20 @@
 
 ## 2.6.0
 
+```bash
+export ver="2.6.0"
+```
+
 ### Install
 
 ```bash
-wget https://mirrors.tuna.tsinghua.edu.cn/apache/kafka/2.6.0/kafka_2.13-2.6.0.tgz
+wget https://mirrors.tuna.tsinghua.edu.cn/apache/kafka/${ver}/kafka_2.13-${ver}.tgz
 ```
 
 ```bash
 sudo mkdir -p /opt/bd
-sudo tar -C /opt/bd -xzvf kafka_2.13-2.6.0.tgz
-sudo ln -snf /opt/bd/kafka_2.13-2.6.0/ /opt/bd/kafka
+sudo tar -C /opt/bd -xzvf kafka_2.13-${ver}.tgz
+sudo ln -snf /opt/bd/kafka_2.13-${ver}/ /opt/bd/kafka
 # for ${log.dirs}
 sudo mkdir -p /opt/bd/tmp/kafka
 ```

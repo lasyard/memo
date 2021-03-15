@@ -196,6 +196,13 @@ done
 #### hdfs
 
 ```bash
+hdfs dfs -ls /
+hdfs dfs -mkdir -p /user/root
+hdfs dfs -put file.dat
+hdfs dfs -cat /user/root/file.dat
+```
+
+```bash
 curl http://las1:9870/
 ```
 

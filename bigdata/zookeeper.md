@@ -2,16 +2,20 @@
 
 ## 3.6.2
 
+```bash
+export ver="3.6.2"
+```
+
 ### Install
 
 ```bash
-wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.2/apache-zookeeper-3.6.2-bin.tar.gz
+wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-${ver}/apache-zookeeper-${ver}-bin.tar.gz
 ```
 
 ```bash
 sudo mkdir -p /opt/bd
-sudo tar -C /opt/bd -xzvf apache-zookeeper-3.6.2-bin.tar.gz
-sudo ln -snf /opt/bd/apache-zookeeper-3.6.2-bin/ /opt/bd/zookeeper
+sudo tar -C /opt/bd -xzvf apache-zookeeper-${ver}-bin.tar.gz
+sudo ln -snf /opt/bd/apache-zookeeper-${ver}-bin/ /opt/bd/zookeeper
 # for ${dataDir}
 sudo mkdir -p /opt/bd/tmp/zookeeper
 ```

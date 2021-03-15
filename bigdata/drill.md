@@ -29,5 +29,11 @@ drill-embedded
 In drill
 
 ```
+!help
 !quit
+```
+
+```sql
+use cp;
+select * from `employee.json` limit 1;
 ```

@@ -17,6 +17,7 @@ sudo yum install java-1.8.0-openjdk
 sudo yum install java-1.8.0-openjdk-devel
 sudo yum install tmux
 sudo yum install git
+sudo yum install man-pages
 ```
 
 ### Set hostname

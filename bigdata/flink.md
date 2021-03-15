@@ -2,16 +2,21 @@
 
 ## 1.12.0/1.11.2
 
+```bash
+export ver="1.12.0"
+export ver="1.11.2"
+```
+
 ### Install
 
 ```bash
-wget https://mirrors.tuna.tsinghua.edu.cn/apache/flink/flink-1.11.2/flink-1.11.2-bin-scala_2.12.tgz
+wget https://mirrors.tuna.tsinghua.edu.cn/apache/flink/flink-${ver}/flink-${ver}-bin-scala_2.12.tgz
 ```
 
 ```bash
 sudo mkdir -p /opt/bd
-sudo tar -C /opt/bd -xzvf flink-1.11.2-bin-scala_2.12.tgz
-sudo ln -snf /opt/bd/flink-1.11.2/ /opt/bd/flink
+sudo tar -C /opt/bd -xzvf flink-${ver}-bin-scala_2.12.tgz
+sudo ln -snf /opt/bd/flink-${ver}/ /opt/bd/flink
 # for ${io.tmp.dirs}
 sudo mkdir -p /opt/bd/tmp/flink
 ```
@@ -95,4 +100,42 @@ flink run -t yarn-per-job dataset-1.0.0-SNAPSHOT.jar
 ```
 ${taskmanager.numberOfTaskSlots} <= ${yarn.scheduler.maximum-allocation-vcores}
 ${taskmanager.memory.process.size} <= ${yarn.scheduler.maximum-allocation-mb}
+```
+
+### SQL client
+
+Install kafka connector
+
+```bash
+wget https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-connector-kafka_2.11/${ver}/flink-sql-connector-kafka_2.11-${ver}.jar
+
+for host in las1 las2 las3; do
+    scp "flink-sql-connector-kafka_2.11-${ver}.jar" "${host}:/opt/bd/flink/lib"
+done
+```
+
+```bash
+sql-client.sh embedded
+```
+
+In SQL client
+
+```
+help;
+quit;
+```
+
+```sql
+create table data (
+    id int,
+    name varchar(64)
+) with (
+    'connector' = 'filesystem',
+    'path' = 'file:///root/data.csv',
+    'format' = 'csv'
+);
+
+select * from data;
+
+drop table data;
 ```
