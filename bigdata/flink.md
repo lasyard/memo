@@ -126,16 +126,34 @@ quit;
 ```
 
 ```sql
-create table data (
-    id int,
+create table people (
+    id int primary key,
     name varchar(64)
 ) with (
     'connector' = 'filesystem',
-    'path' = 'file:///root/data.csv',
+    'path' = 'hdfs:///user/root/people.csv',
     'format' = 'csv'
 );
 
-select * from data;
+create table words (
+    id int,
+    person int,
+    word varchar(128)
+) with (
+    'connector' = 'kafka',
+    'topic' = 'test',
+    'properties.bootstrap.servers' = 'localhost:9092',
+    'properties.group.id' = 'test',
+    'scan.startup.mode' = 'earliest-offset',
+    'format' = 'csv'
+);
 
-drop table data;
+select * from people;
+
+select * from words;
+
+select name, word from words join people on words.person = people.id;
+
+drop table people;
+drop table words;
 ```
