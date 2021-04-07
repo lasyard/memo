@@ -78,3 +78,8 @@ kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic test
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --from-beginning --topic test
 ```
+
+```bash
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group drill-query-consumer
+```
